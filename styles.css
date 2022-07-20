@@ -1,0 +1,230 @@
+:root {
+    font-family: "Gantari", sans-serif;
+    font-size: calc(0.8rem + 0.4vw);
+    --color1: white;
+    --color2: #2c3639;
+    --color3: lightgray;
+    --color4: aquamarine;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: var(--color3);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header,
+.footer {
+    color: var(--color1);
+    background-color: var(--color2);
+    font-size: 0.8rem;
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 50px;
+}
+
+.reddit-btn {
+    color: var(--color1);
+    fill: var(--color1);
+    transition: 0.5s;
+}
+
+.reddit-btn:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.main {
+    width: 100%;
+    height: fit;
+    padding: 2rem;
+    padding-top: 0;
+    display: grid;
+    grid-template: 1fr 10fr / 1fr;
+    gap: 1rem;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn {
+    color: var(--color2);
+    background-color: var(--color1);
+    border: none;
+    border-radius: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+    margin-left: -150px;
+    margin-top: -200px;
+    align-items: center;
+    padding: 1%;
+}
+
+form {
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+form p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+form input {
+    width: 150px;
+}
+
+.submit-btn {
+    font-size: 20px;
+    color: var(--color1);
+    background-color: var(--color2);
+    border: none;
+    border-radius: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.book-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+}
+
+.book-card {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.book-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    font-size: 0.9rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    word-break: break-all;
+}
+
+.card-front {
+    color: var(--color2);
+    background-color: var(--color1);
+}
+
+.card-front.read {
+    background-color: var(--color4);
+}
+
+.card-inner h2,
+.card-inner p {
+    width: 100%;
+    height: fit-content;
+}
+
+.card-back {
+    color: var(--color1);
+    background-color: var(--color2);
+    transform: rotateY(180deg);
+}
+
+.card-back > label {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card-back > button {
+    color: var(--color2);
+    background-color: var(--color1);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+    transition: 0.2s;
+}
+
+.card-back > button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
