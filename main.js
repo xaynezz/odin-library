@@ -107,6 +107,7 @@ submitBtn.addEventListener("click", () => {
         document.getElementById("book").reset();
         clearBooks();
         displayBooks();
+        modal.close();
     } else {
         alert("Please enter all details of book correctly.");
     }
